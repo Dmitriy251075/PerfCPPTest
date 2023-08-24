@@ -455,6 +455,10 @@ int main(int argc, char* argv[])
             perfTestMulti();
             IsArgumented = true;
         }
+        else if (arg == args->at(0))
+        {
+            continue;
+        }
         else
         {
             std::cout << "Unknown argument: " << arg << std::endl;
