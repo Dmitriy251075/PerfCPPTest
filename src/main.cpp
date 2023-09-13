@@ -1,9 +1,6 @@
-#include <barrier>
 #include <chrono>
 #include <cstdint>
-#include <future>
 #include <iostream>
-#include <queue>
 #include <random>
 #include <string>
 #include <thread>
@@ -117,8 +114,8 @@ void perfTimeTestSingle()
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
     // Test Performance
-    IsStarting = true;
     now = std::chrono::high_resolution_clock::now();
+    IsStarting = true;
 
     thread.join();
 
@@ -150,8 +147,8 @@ void perfTimeTestMulti()
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
     // Test Performance
-    IsStarting = true;
     now = std::chrono::high_resolution_clock::now();
+    IsStarting = true;
 
     for (std::thread& th : threads)
     {
@@ -182,13 +179,13 @@ void perfTimeTestSingleCache()
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
     // Test Performance
-    IsStarting = true;
     now = std::chrono::high_resolution_clock::now();
+    IsStarting = true;
 
     thread.join();
 
-    delta = std::chrono::high_resolution_clock::now() - now;
     IsStarting = false;
+    delta = std::chrono::high_resolution_clock::now() - now;
 
 #ifdef _DEBUG
     std::cout << std::endl;
@@ -216,8 +213,8 @@ void perfTimeTestMultiCache()
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
     // Test Performance
-    IsStarting = true;
     now = std::chrono::high_resolution_clock::now();
+    IsStarting = true;
 
     for (std::thread& th : threads)
     {
@@ -279,8 +276,8 @@ void perfTestSingle()
 
     TestThread tes;
 
+    now = std::chrono::high_resolution_clock::now();
     IsStarting = true;
-    auto now = std::chrono::high_resolution_clock::now();
 
     // Variable on the first pass
     bool started = false;
@@ -335,8 +332,8 @@ void perfTestMulti()
 
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
-    IsStarting = true;
     now = std::chrono::high_resolution_clock::now();
+    IsStarting = true;
 
     // Variable on the first pass
     bool started = false;
